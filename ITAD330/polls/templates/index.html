@@ -1,0 +1,37 @@
+{% load static %}
+<html>
+  <head>
+    <title>Simple Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+    <link rel="stylesheet" href="{% static 'polls/style.css' %}" />
+    <script type="module" src="{% static 'polls/index.js' %}"></script>
+  </head>
+  <body>
+    <div>Test Map</div>
+    <div id="map"></div>
+
+
+    <!-- 
+      The `defer` attribute causes the callback to execute after the full HTML
+      document has been parsed. For non-blocking uses, avoiding race conditions,
+      and consistent behavior across browsers, consider loading using Promises.
+      See https://developers.google.com/maps/documentation/javascript/load-maps-js-api
+      for more information.
+      -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKiD_ygA9F6iLSB3Nsw6BTvFOvpf-FmKs&callback=initMap&v=weekly"
+      defer
+      data-lat="{{lat1}}"
+      data-lon="{{lon1}}"
+      data-lat1="{{lat2}}"
+      data-lon1="{{lon2}}"
+      data-lat2="{{lat3}}"
+      data-lon2="{{lon3}}"
+      data-lat3="{{lat4}}"
+      data-lon3="{{lon4}}"
+      data-lat4="{{lat5}}"
+      data-lon4="{{lon5}}"
+    ></script>
+  </body>
+</html>
